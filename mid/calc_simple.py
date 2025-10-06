@@ -14,20 +14,33 @@ print("введите два числа, выберите действие")
 first_num = float(input())
 second_num = float(input())
 
-print("1 - + ")
-print("2 - * ")
-print("3 - - ")
-print("4 - / ")
+first_check = True
 
-choice = int(input())
+while True:
+    if(first_check == True):
+        first_check = False
+    else:
+        print("введите число")
+        first_num = float(input())
+    print("выберите действие")
+    print("1 - + ")
+    print("2 - * ")
+    print("3 - - ")
+    print("4 - / ")
 
-if choice == 1:
-    print(addition(first_num, second_num))
-elif choice == 2:
-    print(multiplication(first_num, second_num))
-elif choice == 3:
-    print(subtraction(first_num, second_num))       
-elif choice == 4:
-    print(division(first_num, second_num))
-else:
-    print("ошибка ввода")
+    choice = int(input())
+
+    if choice == 1:
+        print(addition(first_num, second_num))
+        second_num = addition(first_num, second_num)
+    elif choice == 2:
+        print(multiplication(first_num, second_num))
+        second_num = multiplication(first_num, second_num)
+    elif choice == 3:
+        print(subtraction(first_num, second_num))       
+        second_num = subtraction(first_num, second_num) 
+    elif choice == 4:
+        print(division(first_num, second_num))
+        second_num = division(first_num, second_num)    
+    else:
+        print("ошибка ввода") 
