@@ -11,3 +11,8 @@ def division(first_num, secong_num):
     return (first_num / secong_num)
 
 print("введите два числа, после выберите действие")
+first_num = int(input())
+second_num = int(input())
+
+print(first_num)
+print(second_num)
