@@ -10,9 +10,14 @@ def subtraction(first_num, secong_num):
 def division(first_num, secong_num):
     return (first_num / secong_num)
 
-print("введите два числа, после выберите действие")
-first_num = int(input())
-second_num = int(input())
+print("введите два числа, выберите действие")
+first_num = float(input())
+second_num = float(input())
 
-print(first_num)
-print(second_num)
+print("1 - + ")
+print("2 - * ")
+print("3 - - ")
+print("4 - / ")
+
+choice = int(input())
+
