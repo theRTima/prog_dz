@@ -1,5 +1,6 @@
-first_num = input()
-second_num = input()
+first_num = int(input())
+second_num = int(input())
+base = int(input())
 
 answer = int(first_num) * int(second_num)
 bin_answer = bin(answer)[2:]
