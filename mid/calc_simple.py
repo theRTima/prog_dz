@@ -21,3 +21,13 @@ print("4 - / ")
 
 choice = int(input())
 
+if choice == 1:
+    print(addition(first_num, second_num))
+elif choice == 2:
+    print(multiplication(first_num, second_num))
+elif choice == 3:
+    print(subtraction(first_num, second_num))       
+elif choice == 4:
+    print(division(first_num, second_num))
+else:
+    print("ошибка ввода")
