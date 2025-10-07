@@ -1,6 +1,9 @@
-first_num = int(input("первое число "))
-second_num = int(input("второе число "))
+first_num = input("первое число ")
+second_num = input("второе число ")
 base = int(input("основание системы "))
+
+first_num = int(first_num,base)
+second_num = int(second_num,base)
 
 def converter(
         num, base):
