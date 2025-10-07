@@ -5,7 +5,7 @@ def recursive_sum(num):
     sum = 0
 
     for i in numbers_array:
-        sum += numbers_array[i]
+        sum += int(i)
     
     if len(str(sum)) <= 1:
         return sum
