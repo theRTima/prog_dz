@@ -25,10 +25,11 @@ def converter(num, base):
     else:
         return result
 
-answer = first_num*second_num
-answer = int(converter(answer,base))
+
 first_num = int(converter(first_num,base))
 second_num = int(converter(second_num,base))
+answer = first_num*second_num
+#answer = int(converter(answer,base))
 
 print(f"число {first_num} в системе с основанием", base, ":", first_num)
 print(f"число {second_num} в системе с основанием", base, ":", second_num)
