@@ -32,8 +32,6 @@ def converter(
         return result
 
 answer = first_num*second_num
-#first_num = int(converter(first_num,base))
-#second_num = int(converter(second_num,base))
 answer = converter(answer,base)
 
 print(f"Ответ : ", answer)
