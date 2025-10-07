@@ -2,9 +2,12 @@ first_num = int(input("первое число "))
 second_num = int(input("второе число "))
 base = int(input("основание системы "))
 
-def converter(num, base):
+def converter(
+        num, base):
+    
     all_base = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     negative_check = False
+
     if base > 36:
         print("основание системы больше 36")
         exit()
