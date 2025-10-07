@@ -3,6 +3,8 @@ second_num = int(input("второе число "))
 base = int(input("основание системы "))
 
 print(30%16)
+all_base = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+print(all_base[1])
 
 def converter(num, base):
     all_base = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
