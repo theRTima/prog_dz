@@ -9,4 +9,4 @@ def gcd(first_num, second_num):
             second_num = second_num % first_num
     return first_num + second_num
 
-gcd(first_num,second_num)
+print(gcd(first_num,second_num))
