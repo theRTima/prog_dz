@@ -12,4 +12,4 @@ def recursive_sum(num):
     else:
         return recursive_sum(sum)
 
-recursive_sum(num)
+print(recursive_sum(num))
