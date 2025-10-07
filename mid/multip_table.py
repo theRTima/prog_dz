@@ -4,7 +4,7 @@ base = int(input("основание системы "))
 
 def converter(num, base):
     all_base = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
+    negative_check = False
     if base > 36:
         print("основание системы больше 36")
         exit()
