@@ -29,6 +29,6 @@ first_num = int(converter(first_num,base))
 second_num = int(converter(second_num,base))
 answer = first_num*second_num
 
-print("число 1 в системе с основанием", base, ":", first_num)
-print("число 2 в системе с основанием", base, ":", second_num)
+print(f"число {first_num} в системе с основанием", base, ":", first_num)
+print(f"число {second_num} в системе с основанием", base, ":", second_num)
 print("произведение в системе с основанием", base, ":", answer)
