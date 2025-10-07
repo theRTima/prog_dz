@@ -32,4 +32,4 @@ answer = converter(answer,base)
 
 print(f"число {first_num} в системе с основанием", base, ":", first_num)
 print(f"число {second_num} в системе с основанием", base, ":", second_num)
-print("произведение в системе с основанием", base, ":", answer)
+print(f"{first_num} * {second_num} в системе с основанием", base, ":", answer)
