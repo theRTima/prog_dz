@@ -52,5 +52,4 @@ while True:
         first_num = division(first_num, second_num) 
            
     else:
-        print("ошибка ввода")
-        exit()
+        print("ошибка ввода, попробуйте еще раз")
