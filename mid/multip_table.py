@@ -43,8 +43,8 @@ elif base == 10:
     print("произведение в системе с основанием", base, ":", answer)
     exit()
 
-first_num = converter(first_num,base)
-second_num = converter(second_num,base)
+first_num = int(converter(first_num,base))
+second_num = int(converter(second_num,base))
 answer = first_num*second_num
 
 print("число 1 в системе с основанием", base, ":", first_num)
