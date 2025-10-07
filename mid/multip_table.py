@@ -25,8 +25,6 @@ def converter(num, base):
     else:
         return result
 
-answer = int(first_num) * int(second_num)
-
 if base == 2:
     first_num = bin(first_num)[2:]
     second_num = bin(second_num)[2:] 
@@ -44,6 +42,10 @@ elif base == 10:
     print("число 2 в системе с основанием", base, ":", second_num)
     print("произведение в системе с основанием", base, ":", answer)
     exit()
+
+first_num = converter(first_num,base)
+second_num = converter(second_num,base)
+answer = first_num*second_num
 
 print("число 1 в системе с основанием", base, ":", first_num)
 print("число 2 в системе с основанием", base, ":", second_num)
