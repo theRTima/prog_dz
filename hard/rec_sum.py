@@ -1,4 +1,4 @@
-num = input()
+num = int(input())
 
 def recursive_sum(num):
     numbers_array = list(str(num))
@@ -11,5 +11,5 @@ def recursive_sum(num):
         return sum
     else:
         return recursive_sum(sum)
-
+    
 print(recursive_sum(num))
