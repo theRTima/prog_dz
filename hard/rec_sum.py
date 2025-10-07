@@ -11,5 +11,5 @@ def recursive_sum(num):
         return sum
     else:
         return recursive_sum(sum)
-    
+
 print(recursive_sum(num))
