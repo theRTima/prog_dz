@@ -2,6 +2,8 @@ first_num = int(input("первое число "))
 second_num = int(input("второе число "))
 base = int(input("основание системы "))
 
+print(1%16)
+
 def converter(num, base):
     all_base = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     negative_check = False
