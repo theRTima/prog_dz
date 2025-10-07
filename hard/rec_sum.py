@@ -7,6 +7,9 @@ def recursive_sum(num):
     for i in numbers_array:
         sum += numbers_array[i]
     
-    return recursive_sum(sum)
+    if len(sum) <= 1:
+        return sum
+    else:
+        return recursive_sum(sum)
 
 recursive_sum(num)
