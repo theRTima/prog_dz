@@ -4,5 +4,5 @@ class TimurCheck:
     def is_timur(name):
         return name == "Timur"
 
-name_test = input()
-print(TimurCheck.is_timur(name_test))
+print(f"\nправильное имя? {TimurCheck.is_timur("Timur")}")
+print(f"\nправильное имя? {TimurCheck.is_timur("Alex")}")
