@@ -1,36 +1,36 @@
 from abc import ABC, abstractmethod
 
-class Shape(ABC):
-    def __init__(self, name):
-        self.name = name
+class Game(ABC):
+    def __init__(self,title):
+        self.title = title
     
     @abstractmethod
-    def sides(self):
+    def restriction(self):
         pass
     
-    def get_name(self):
-        return self.name
+    def get_title(self):
+        return self.title
 
-class Square(Shape):
-    def sides(self):
-        return f"{self.name} сторон: 4"
+class FPS(Game):
+    def restriction(self):
+        return f"{self.title} Рейтинг: 18+"
 
-class Triangle(Shape):
-    def sides(self):
-        return f"{self.name} сторон: 3"
+class Sandbox(Game):
+    def restriction(self):
+        return f"{self.title} Рейтинг: 6+"
 
-class ShapeFactory:
+class GameFactory:
     @staticmethod
-    def new_shape(shape,name):
-        if shape == "triangle":
-            return(Triangle(name))
-        elif shape == "square":
-            return(Square(name))
+    def new_game(genre,title):
+        if genre == "fps":
+            return(FPS(title))
+        elif genre == "sandbox":
+            return(Sandbox(title))
         else:
-            print(f"Неизвестная фигура - {shape}")
+            print(f"Неизвестный жанр - {genre}")
 
-first_square = ShapeFactory.new_shape("square","Квадрат")
-first_triangle = ShapeFactory.new_shape("triangle","Треугольник")
+first_fps = GameFactory.new_game("fps","Counter_Strike")
+first_sandbox = GameFactory.new_game("sandbox","WorldBox")
 
-print(f"{first_square.sides()}")
-print(f"{first_triangle.sides()}")
+print(f"{first_fps.restriction()}")
+print(f"{first_sandbox.restriction()}")
