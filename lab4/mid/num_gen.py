@@ -1,6 +1,6 @@
 import random
 
-def rand_gen(beg: int, end: int, count: int):
+def rand_gen(beg, end, count):
     for i in range(count):
         yield random.randint(beg, end)
 
