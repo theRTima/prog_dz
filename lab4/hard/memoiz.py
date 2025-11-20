@@ -1,5 +1,3 @@
-import random
-
 def memoize(func):
     cache = {}
     def wrapper(*args):
