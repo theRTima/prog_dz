@@ -2,7 +2,7 @@ from functools import reduce
 
 def pipeline():
     data = list(range(1, 21))
-    print(f"данные: {data}")
+    print(f"исходные данные: {data}")
 
     result = reduce(lambda x, y: x + y, 
                     filter(lambda x: x > 100,
