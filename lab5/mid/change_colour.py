@@ -22,7 +22,7 @@ def change_c():
 test_label = Label(root)
 test_label.pack(expand=True)
 
-colour_test = Frame(root, width=400, height=200, bg="white")
+colour_test = Frame(root, width=400, height=200)
 
 start = Button(root, text = "change", command=change_c)
 
