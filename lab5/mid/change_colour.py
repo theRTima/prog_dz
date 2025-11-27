@@ -1,7 +1,5 @@
 import tkinter as tk
 from tkinter import *
-from tkinter.ttk import Progressbar
-import time
 
 colours = ["white","red","green","blue","orange","black"]
 current_colour = 0
