@@ -1,4 +1,4 @@
-import tkinter as tk
+import tkinter
 from tkinter import *
 from tkinter.ttk import Progressbar
 import time
