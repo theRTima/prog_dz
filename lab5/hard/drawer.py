@@ -6,7 +6,7 @@ from PyQt5.QtGui import QPainter, QPen
 class DrawingApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('Drawing')
+        self.setWindowTitle('paint 0')
         self.setGeometry(100, 100, 800, 600)
         self.setStyleSheet("background-color: white;")
         
