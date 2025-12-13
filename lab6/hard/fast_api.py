@@ -11,7 +11,6 @@ class Base(DeclarativeBase):pass
 
 class Game(Base):
     __tablename__ = "games"
-    
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     title: Mapped[str] = mapped_column(String)
     size: Mapped[int]
