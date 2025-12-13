@@ -2,14 +2,12 @@ from sqlalchemy import create_engine, String
 from sqlalchemy.orm import DeclarativeBase, sessionmaker, Session, Mapped, mapped_column
 from fastapi import FastAPI, HTTPException, Depends
 import uvicorn
-from typing import List
 
 postgresql_database = "postgresql://postgres:856156@localhost/test"
 engine = create_engine(postgresql_database)
 SessionLocal = sessionmaker(bind=engine)
 
-class Base(DeclarativeBase):
-    pass
+class Base(DeclarativeBase):pass
 
 class Game(Base):
     __tablename__ = "games"
@@ -60,7 +58,6 @@ def get_game(game_id: int, db: Session = Depends(get_db)):
     if not game:
         raise HTTPException(status_code=404, detail="Игра не найдена")
     return game
-
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
