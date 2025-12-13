@@ -1,54 +1,66 @@
-from fastapi import FastAPI, HTTPException
-from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine, String
+from sqlalchemy.orm import DeclarativeBase, sessionmaker, Session, Mapped, mapped_column
+from fastapi import FastAPI, HTTPException, Depends
 import uvicorn
+from typing import List
 
-DATABASE_URL = "sqlite:///./books.db"
+postgresql_database = "postgresql://postgres:856156@localhost/test"
+engine = create_engine(postgresql_database)
+SessionLocal = sessionmaker(bind=engine)
 
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+class Base(DeclarativeBase):
+    pass
 
-Base = declarative_base()
-
-class Book(Base):
-    __tablename__ = "books"
+class Game(Base):
+    __tablename__ = "games"
     
-    id = Column(Integer, primary_key=True, index=True)
-    title = Column(String)
-    author = Column(String)
+    id: Mapped[int] = mapped_column(primary_key=True, index=True)
+    title: Mapped[str] = mapped_column(String)
+    size: Mapped[int]
 
 Base.metadata.create_all(bind=engine)
 
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-db = SessionLocal()
+def init_db():
+    session = SessionLocal()
+    if session.query(Game).count() == 0:
+        games = [
+            Game(title="The Witcher 3", size=50000),
+            Game(title="Cyberpunk 2077", size=70000),
+            Game(title="Red Dead Redemption 2", size=150000)
+        ]
+        session.add_all(games)
+        session.commit()
+        print("3 игры добавлены")
+    session.close()
 
-if db.query(Book).count() == 0:
-    test_books = [
-        Book(title="test book", author="Рощин Т.М"),
-        Book(title="Война и мир", author="Л.Н. Толстой"),
-        Book(title="Мастер и Маргарита", author="М.А. Булгаков"),
-    ]
-    db.add_all(test_books)
-    db.commit()
+init_db()
 
-app = FastAPI(title="datadabase")
+app = FastAPI(title="test api")
 
-@app.get("/books")
-def get_books():
-    books = db.query(Book).all()
-    return books
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
-@app.get("/books/{book_id}")
-def get_book(book_id: int):
-    book = db.query(Book).filter(Book.id == book_id).first()
-    if book is None:
-        raise HTTPException(status_code=404, detail="Книга не найдена")
-    return book
+@app.get("/games")
+def get_games(db: Session = Depends(get_db)):
+    games = db.query(Game).all()
+    return games
 
-@app.get("/count")
-def get_count():
-    count = db.query(Book).count()
+@app.get("/games/count")
+def get_games_count(db: Session = Depends(get_db)):
+    count = db.query(Game).count()
     return {"count": count}
+
+@app.get("/games/{game_id}")
+def get_game(game_id: int, db: Session = Depends(get_db)):
+    game = db.query(Game).filter(Game.id == game_id).first()
+    if not game:
+        raise HTTPException(status_code=404, detail="Игра не найдена")
+    return game
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
