@@ -1,1 +1,1 @@
-test message with a variable - {{ main_var }}
+test message with a variable - {{main_var}}
