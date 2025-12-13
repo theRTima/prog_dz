@@ -1,8 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTableWidget, QTableWidgetItem
 
-
-
 class Table(QWidget):
     def __init__(self):
         super().__init__()
