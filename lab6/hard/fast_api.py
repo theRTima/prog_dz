@@ -55,7 +55,7 @@ def get_games_count(db: Session = Depends(get_db)):
 def get_game(game_id: int, db: Session = Depends(get_db)):
     game = db.query(Game).filter(Game.id == game_id).first()
     if not game:
-        raise HTTPException(status_code=404, detail="Игра не найдена")
+        raise HTTPException(status_code=404, detail="no game")
     return game
 
 if __name__ == "__main__":
