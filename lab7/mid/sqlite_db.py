@@ -20,10 +20,10 @@ def create_database():
     
     games = [
         ('The Witcher 3', 'RPG', 2015, 40),
-        ('Cyberpunk 2077', 'RPG', 2020, 59.99),
-        ('Minecraft', 'Sandbox', 2011, 26.95),
-        ('Grand Theft Auto V', 'Action', 2013, 29.99),
-        ('Red Dead Redemption 2', 'Action', 2018, 59.99)
+        ('Cyberpunk 2077', 'RPG', 2020, 60),
+        ('Minecraft', 'Sandbox', 2011, 27),
+        ('Grand Theft Auto V', 'Action', 2013, 30),
+        ('Red Dead Redemption 2', 'Action', 2018, 60)
     ]
     
     cursor.executemany('''
