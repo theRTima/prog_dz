@@ -15,3 +15,4 @@ env/
 .DS_Store
 lab7/mid/games.csv
 lab7/mid/games.db
+async_games.db
