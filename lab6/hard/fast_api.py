@@ -41,6 +41,10 @@ def get_db():
     finally:
         db.close()
 
+@app.post("/add")
+def get_games(db: Session = Depends(get_db)):
+    raise HTTPException(status_code=500, detail="server error")
+
 @app.get("/games")
 def get_games(db: Session = Depends(get_db)):
     games = db.query(Game).all()
