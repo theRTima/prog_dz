@@ -1,7 +1,11 @@
 import sqlite3
+import os
 
 def create_database():
-    conn = sqlite3.connect('games.db')
+    task_dir = os.path.dirname(os.path.abspath(__file__))
+    db_dir = os.path.join(task_dir,"games.db")
+
+    conn = sqlite3.connect(db_dir)
     cursor = conn.cursor()
     
     cursor.execute('''
@@ -15,7 +19,7 @@ def create_database():
     ''')
     
     games = [
-        ('The Witcher 3', 'RPG', 2015, 39.99),
+        ('The Witcher 3', 'RPG', 2015, 40),
         ('Cyberpunk 2077', 'RPG', 2020, 59.99),
         ('Minecraft', 'Sandbox', 2011, 26.95),
         ('Grand Theft Auto V', 'Action', 2013, 29.99),
