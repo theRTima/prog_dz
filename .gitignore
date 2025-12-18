@@ -13,3 +13,5 @@ venv/
 env/
 .venv/
 .DS_Store
+lab7/mid/games.csv
+lab7/mid/games.db
