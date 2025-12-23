@@ -11,5 +11,9 @@ def main():
     circle1 = Circle(40)
     print(circle1.radius)
 
+def test_simple():
+    circle2 = Circle(50)
+    assert circle2.radius == 50
+
 if __name__ == '__main__':
     main()
