@@ -14,7 +14,7 @@ dependencies = [
 packages = [{include = "lab8", from = "src"}]
 
 [tool.poetry.scripts]
-arg-script = "lab8.args:main"
+properties = "lab8.properties:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
