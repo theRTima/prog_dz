@@ -1,7 +1,7 @@
 [project]
 name = "lab8"
 version = "0.1.0"
-description = ""
+description = "lab number 8, variant 9"
 authors = [
     {name = "theRTima",email = "roschintimur@gmail.com"}
 ]
@@ -12,6 +12,9 @@ dependencies = [
 
 [tool.poetry]
 packages = [{include = "lab8", from = "src"}]
+
+[tool.poetry.scripts]
+arg-script = "lab8.args:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
