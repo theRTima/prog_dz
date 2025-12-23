@@ -23,4 +23,4 @@ jobs:
           poetry install
 
       - name: Run tests
-        run: poetry run pytest properties
+        run: poetry run pytest tests/
